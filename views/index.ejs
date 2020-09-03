@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Meme</title>
+    <meta name="keywords" content="photik, photik home" />
+    <meta charset="UTF-8">
+    <meta name="description" content="All types of memes you can find here, alawyes simle. ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../javascripts/jquery.js"></script>
+    <script type="text/javascript" src="../javascripts/index.js"></script>
+ 
+</head>
+
+<body>
+    <div id="my_meme">
+        <div id="photik">
+            <div id="logo_div">
+                <a href="/">
+                  <img id="logoImg" src="../images/logo.gif">
+                </a>
+            </div>
+            <div id="search">
+                <form id="dearch_f" action="/action_page.php">
+                    <input id="search_bar" type="text" placeholder="Search.." name="search" required>
+                    <div id="search_b"><button id="search_button" type="submit"><img id="search_icon"
+                                src="images/search icon.png"> </button></div>
+                </form>
+            </div>
+
+
+
+
+            <!--For Loged In User-->
+
+           
+            
+          <% if(postedUsername) { %>
+            <div id="homeSection"> <span> <a id="home" href="/">Home</a> </span></div>
+            <div id="user"  >
+
+                <div id="myaccount">
+                    <nav role="navigation">
+                       
+                        <ul>
+                           
+                            <li>
+                               
+
+                                <img id="profileImageIndex"src="./profileCoverImage/<%= postedUsername.profileImage %>" /> 
+                              
+                              
+                                <ul class="dropdown">
+                                    <li><a href="/my-profile"> My Profile</a></li>
+                                    <li><a href="#">Settings</a></li>
+                                    <li><a href="#">Propertyed</a></li>
+                                    <li><a href="/logout">Logout</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        
+            <% } %>
+       
+
+            
+              
+               
+
+
+
+
+                 
+                  
+                  
+                
+
+            <% if(postedUsername) { %>
+
+                <% }else{ %>
+                    <div id="homeSection2"> <span> <a id="home" href="/">Home</a> </span></div>
+                 <div id="NotLogedin"  >
+                <div id="SignUp">
+                    <button id="signUpBtnBtn" name="Upload_media" ><a  id="notLogedLink" href="/signup"> Sign Up</a> </button>
+
+                </div>
+                <div id="Login">
+                    <button id="loginBtn" name="Upload_media" ><a id="notLogedLink"  href="/login">Log in</a></button>
+
+                </div>
+              </div>
+
+
+
+                <div id="upload_media">
+                    <a href="/login"><button id="upload" name="Upload_media">Post </button></a>
+
+                </div>
+        
+           <% } %>
+
+
+           
+
+
+
+           
+
+
+
+
+
+
+        </div>
+
+
+
+
+        <!-- User  Post Section-->
+      
+      
+        <div id="user_write_post_sec">
+
+              <!-- User text Post Section-->
+            <form id="uers_written_post" action="/textPost" method="post" enctype="multipart/form-data" >
+
+                <div id="user_post_section">
+
+                    <textarea id="user_meme" placeholder="Write your Meme here... "  wrap="physical" name="user_meme_text" ></textarea>
+                   
+                    </div>
+
+                    <div id="post_btn1"><button id="user_post_btn" type="submit" > Post</button></div>
+
+                    </form>
+
+
+
+
+                   <!-- User image Post Section-->
+                    <form  action="/imgPost" method="post" enctype="multipart/form-data">
+
+                    <div id="post_icons">
+
+                        <p><input type="file"name="imgMeme"  accept=".jpg,.jpeg,.png,.gif"  id="file"  onchange="loadFile(event)" style="display: none;"></p>
+
+                        
+
+                        <p><label for="file"   > <img id="photo_upload_icon" 
+                                src="images/photo_upload_icon.png" style="cursor: pointer;"></label> </p>
+
+                                <p  id="uploadtext"> <label for="file" style="cursor: pointer;">photo</label></p><br>
+
+                    </div>
+               
+          
+
+            <div id="imageShow">
+
+                <div id="titleAndCatagory">
+                    <span id="titleOfmeme">Title:</span>
+                    <input id="memeTitle" type="text" name="memeTitle" placeholder="wright about the meme..."><br>
+                   <br>
+                   
+            <label  id="memeTypetext" for="memeType"> Select meme type:</label>
+
+               <select id="memeType">
+                    <option value="Funny" name="memetype">Funny</option>
+                    <option value="Animal" name="memetype">Animal</option>
+                    <option value="Poliics" name="memetype">Poliics</option>
+                    <option value="Sports" name="memetype">Sports</option>
+                    <option value="Cute" name="memetype">Cute</option>
+                    <option value="Vide Game" name="memetype">Vide Game</option>
+                    <option value="Tv" name="memetype">Tv</option>
+                    <option value="Codeing" name="memetype">Codeing</option>
+                    <option value="Social" name="memetype">Social</option>
+                    <option value="Hot" name="memetype">Hot</option>
+                    <option value="Other" name="memetype">Other</option>
+                </select>
+                </div>
+
+            <p><img id="outputImage" width="180"  /></p>
+            
+          
+           
+          </div><br>
+          <div id="post_btn"><button id="user_post_btn" type="submit" > Post</button></div>
+        </form>
+
+        </div>
+
+
+
+
+
+        <% if(massege !=''){ %>
+            <h3 id="errorM"> <%= massege%> </h3> 
+               <% } %></div>
+         
+          
+       
+
+        <!-- PopUp Box Section-->
+
+
+        <!-- Image post Section-->
+
+
+
+        <!-- Post Seen By User Section-->
+
+         <% postData.forEach(function(posts) {  %>
+
+        <div id="user_seen_post">
+
+            <div id="user_photo">
+                <a href="#user_profile"><img id="posted_user_photo" src="./profileCoverImage/<%= posts.userProfileImg %>"></a>
+            </div>
+
+
+
+
+            <div id="user_name">
+                <a href="#user_profile">
+                    <spam id="uoload_user_name"> <%= posts.posteduserName %>  <%= posts.postedUserLastname %></spam></a>
+                    <span id="date">- <%= posts.date.getDate() %></span> <span id="date"><%= posts.date.toLocaleString('default', { month: 'short' }) %></span> 
+                   
+                
+            </div>
+            <div id="user_edit_sec">
+                <span id="user_edit"></span>
+
+
+            </div>
+            <div id="user_caption">
+                <span id="user_set_caption" ><%= posts.postedImageMemeTitle  %>  </span>
+            </div>
+            <hr>
+           
+
+            
+
+            <% if(posts.user_meme_text){  %>
+            <div id="userTestMeme">        
+                
+                 <article id="memeTextarea"><%= posts.user_meme_text %> </article>
+              
+            </div>
+
+            <% } else { %>
+
+
+          
+            <div id="userImageMeme"  >
+          
+           <img  id="PostedImageMeme" src="./uploads/<%= posts.postedImageMemeName %>"  />
+      
+            </div>
+            <% } %>
+            
+            <br>
+
+            
+        
+ 
+
+            <div id="user_activity">
+
+
+
+              
+
+
+
+               
+                    
+                     <i id="heart_iconlike" class="fa fa-heart" aria-hidden="true"></i>
+                     <span id="like_count" >534</span> 
+
+                   
+           
+
+               
+                <i id="commentIcon" class="fa fa-comments" aria-hidden="true"></i>
+                    <span id="comment_count">105</span>
+               
+               
+                    <i id="shareIcon" class="fa fa-share" aria-hidden="true"></i>
+                    
+
+
+                    <span id="share_count">78</span>
+              
+               
+
+            </div> <hr>
+            
+            <form>
+            <textarea id="user_comments" placeholder="Write your comment... " name="user_comment" required></textarea>
+            <div id="CommmentSubmit"> <button id="cummentSubmit" type="submit" value="submit">Comment</button></div>
+
+
+
+            </form>
+      <div id="commentView">
+        <span id="commentedUserName">Kiron :</span>  <span>This is so funny</span>
+    </div>
+        
+
+
+
+
+        </div>
+
+        <% }) %>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+   
+
+</body>
+
+</html>

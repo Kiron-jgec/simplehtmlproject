@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> <%= records.name %></title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/user_profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+   
+</head>
+
+<body>
+
+
+
+  
+  
+
+<!--Header-->
+
+
+
+<div id="photik">
+  <div id="logo_div">
+      <a href="/">
+          <h1 id="logo"> Pothik</h1>
+      </a>
+  </div>
+  <div id="search">
+      <form id="dearch_f" action="#">
+          <input id="search_bar" type="text" placeholder="Search.." name="search" required>
+          <div id="search_b"><button id="search_button" type="submit"><img id="search_icon"
+                      src="images/search icon.png"> </button></div>
+      </form>
+  </div>
+
+
+
+
+  <!--For Loged In User-->
+
+  <div id="homeSection"> <span> <a id="home" href="/">Home</a> </span></div>
+  
+
+  <div id="user"  >
+
+      <div id="myaccount">
+          <nav role="navigation">
+              <ul>
+
+                  <li>
+                     
+
+                      
+                      <img id="profileImageIndex"src="./profileCoverImage/<%= records.profileImage %>" /> 
+                      <ul class="dropdown">
+                          <li><a href="/my-profile"> My Profile</a></li>
+                          <li><a href="#">Settings</a></li>
+                          <li><a href="#">Propertyed</a></li>
+                          <li><a href="/logout">Logout</a></li>
+                      </ul>
+                  </li>
+
+              </ul>
+          </nav>
+      </div>
+  </div>
+<!--non Logeni-->
+      
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Main Content-->
+
+
+
+    <div id="my_profile">
+        <br>
+
+        <div id="user_back_pic">
+            <img id="user_cover_photo" src="./profileCoverImage/<%= records.coverImaage %>">
+        </div>
+
+
+        <div id="user_pic">
+
+            <img id="user_photo" src="./profileCoverImage/<%= records.profileImage %>">
+
+        </div>
+        <div id="user_short_boi">
+            <p id="user_bio"><%= records.userBio %> </p>
+           
+        </div>
+      
+       
+        <div id="user_edit_profile">
+            <a href="/edit-profile "><button id="edit_Profile"> <b>Edit profile</b></button></a>
+        </div>
+        <div id="user_details">
+
+            <h1 id="user_name"><i> <%= records.name %> </i>
+                 <i><%= records.lastName %> </i></h1>
+         
+            <h3 id="user_email">Email : <i><%= records.email %> </i></h3>
+            <h3 id="user_email">Id : <i><%= records._id %> </i></h3>
+
+          <div id="user_activityes">
+           <span id="total_view"> Views:5K </span>
+           <span id="total_flames"> XP: 1.2k </span><br>
+           <span id="total_followers"> Followers: 200, </span>
+           <span id="total_following"> Following: 50 </span>
+
+          </div>
+         
+
+
+
+
+
+
+
+        </div>
+        <div id="user_activity">
+            <h1 id="meme_user">Your Memes</h1><br>
+        
+
+
+        <% if(UserPostData !=0){ %>
+
+            <% UserPostData.forEach(function(posts) {  %>
+             <div id="usermeme">
+             
+              <% if(posts.user_meme_text){  %>
+
+
+                <article id="PostAritcile"> <%= posts.user_meme_text %> </article><hr>
+                <% }else{ %>
+
+               <article id="postTitleUser"> <%= posts.postedImageMemeTitle  %>  </article>
+               <img id="user_meme"src="./uploads/<%= posts.postedImageMemeName %>"><br>
+
+              <% } %>
+
+     <div id="postativity">
+              <i id="totalViews" class="fa fa-eye" aria-hidden="true"></i>
+              <span>200</span>
+             
+              <i  id="totalpoient" class="fa fa-trophy" aria-hidden="true"></i>
+              <span>520</span>
+              <div id="DeleteandDownloaddiv">
+              
+              <% if(posts.user_meme_text){  %>
+
+                <% }else{ %>
+             <a id="downloadLink" href="./uploads/<%= posts.postedImageMemeName %>" download> <i id='postdownload' class="fa fa-download" aria-hidden="true"></i>
+              <span id="downloadText">download</span>
+            </a>
+            <% } %>
+            <a id="DeleteLink" href="">
+                <i id="PostDelete" class="fa fa-trash" aria-hidden="true"></i>
+             <span id="deletePost">delete</span>
+           </a> 
+        </div>
+          
+              
+            </div>     
+              
+            
+            
+            
+         
+          </div><br>
+          <% }) %>
+          
+        <% }else{ %>
+        
+<div id="emptyUserpost">
+         
+    <i id="emtyIcon" class="fa fa-hourglass-start" aria-hidden="true"></i>
+         <p id="emtyPost">you have no meme post yet..</p>
+        </div>
+          <% } %>
+          
+          
+          
+          
+        
+          
+
+        </div>
+
+       <br>
+    </div>
+<div id='footer'>
+
+<a href="/aboutUs">about us</a>
+<a href="/privacy">privacy and policy</a>
+<a href="/contact">contact</a>
+<a href="/about cookie">about cookie</a>
+<a href="/feedback">feedback</a>
+<span id="copy">&copy;</span> <span id="demo" ></span><span id="web">-pothik</span>
+
+
+
+
+</div>
+
+
+<script>
+   function openForm() {
+  document.getElementById("PosteditDelete").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+      
+   
+    </script>
+
+</body>
+
+</html>

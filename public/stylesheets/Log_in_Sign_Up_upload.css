@@ -1,0 +1,517 @@
+body
+{
+    background-color: #ffffff;
+}
+#Logo
+{
+    margin-left: 50px;
+    color:#035964;
+    font-size:40px;
+}
+
+#Log_In_Form                                                                /* Log In  Form*/
+{
+    width: 500px;
+    height:350px;
+    margin-left: 32%;
+    
+    background-color:white ;
+    border-radius: 15px;;
+    box-shadow: 0px 2px 10px -4px rgba(0,0,0,1);
+   
+}
+
+#log_in_text
+{
+    text-align: center;
+   
+    width:100%;
+    height:50px;
+    margin-top:-4%;
+}
+#errorMsG
+{
+   
+    text-align: center;
+    margin-top: -10px;
+    height: 50px;
+   
+   
+}
+#errorM
+{
+color: rgb(255, 0, 0);
+margin-top: -1px;
+font-family: Arial black;
+ 
+}
+#LogIndev
+{
+    width:100%;
+    height:60px;  
+    background-color: #07535c;
+    border-radius: 15px 15px 0px 0px ;
+}
+#log_form
+{
+    margin-top: -40px;
+}
+#login_text
+{
+    color: #ffffff;
+    font-size: 40px;
+}
+#id_text,#id_pass
+{
+    font-size: 20px;
+    color:#076570 ;
+    font-family: Arial Black;
+    
+   
+
+}
+#id_text
+{
+    margin-top:50px;
+    margin-left: -320px;
+}
+#id_pass
+{
+    margin-top:-1px;
+    margin-left: -350px;
+}
+
+#log_in_sec
+{
+    margin-top: -55px;
+    margin-left:80px;
+
+}
+
+#user_id,#user_pass
+{
+    width:70%;
+    height: 35px;
+    color:#0b3438;
+    font-size: large;
+   
+   
+    border-width: 0 0 2px;
+    border-color: #07535c;
+    outline: none;
+  
+
+}
+#user_id:focus,#user_pass:focus {
+  
+    border-color: rgb(5, 231, 175);
+   
+  }
+ 
+
+#pass_sec
+{
+    margin-top: -55px;
+    margin-left:80px;  
+}
+#log_sub
+{
+    width:20%;
+    height: 40px;
+    background-color:#07535c ;
+    color:white;
+    font-size: large;
+    font-family: Arial Black;
+    border:none;
+    border-radius: 7px;
+    cursor: pointer;
+    outline: none;
+}
+
+#log_sub:hover
+{
+    background-color: #05a1b3;
+}
+#forget_pass_text
+{
+    color: rgb(253, 5, 129); 
+}
+#user_massage
+{
+    margin-left: -30px;
+    margin-top: 20px;
+}
+a
+{
+    color:rgb(8, 121, 111);
+    text-decoration: none;
+}
+a:hover{
+    color:rgb(253, 5, 129);
+}
+#u_msg
+{
+    color: rgb(253, 5, 129);
+    font-size: 20px;
+}
+
+
+#footerlogin
+{
+
+    width:75%;
+    margin-left: 12.5%;
+    height: auto;
+    font-family: Arial black;
+    text-align: center;
+    margin-top: 180px;
+   
+  
+}
+#footerlogin a
+{
+    padding: 11px 20px;
+    color:#6e7f81 ;
+}
+#footerlogin a:hover
+{
+    color:#035964 ;
+}
+                                                 
+                                               
+
+
+                                                      /* Sign Up Form*/
+
+
+    #sign_up
+    {    
+        margin-left: 30%;
+        margin-top: -70px;
+        width:40%;
+        height:fit-content;
+        background-color: white;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0px 2px 10px -4px rgba(0,0,0,1);
+    }   
+    
+    #signUpdev
+    {
+        width:100%;
+        background-color:#07535c ;
+        height: 70px;
+        text-align: center;
+        border-radius:10px 10px 0px 0px ;
+    }
+    #Sign_Up_text
+{
+    color:#ffffff;
+    font-family: Arial Black;
+    text-shadow: black;
+    
+}
+
+#errors
+{
+    text-align: center;
+}
+#successMsg
+{
+    color:green;
+    margin-left:27%;
+     font-family: Arial black;
+}  
+#errorMsg
+{
+    color:red;
+    margin-left:25%;
+    font-family: Arial black;
+}
+
+
+#sign_up_form
+{
+    margin-left:-200px;
+}
+#nameLength
+{
+    margin-top:-30px;
+    margin-left: 150px;
+}
+#rules{
+margin-top: -26px;
+width:fit-content;
+margin-left: 82%;
+cursor: pointer;
+
+
+}
+#rulesText{
+    font-size: 20px;
+    font-family: Arial black;
+    color: #07535c;
+}
+.tooltip {
+    position: relative;
+    margin-top: -26px;
+   
+    width: fit-content;
+    margin-left: 90%;
+    cursor: pointer;
+  
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 250px;
+    background-color: #ffffff;
+    color: #07535c;
+    text-align: center;
+    border-radius: 6px;
+    font-family: Arial black;
+    padding: 5px 0;
+    box-shadow: 0px 2px 10px -4px rgba(0,0,0,1);
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+#user_name,#user_email,#user_phone_no,#user_password,#user_connfm_pass
+{  
+    font-family: Arial Black;
+    font-size: larger;
+    color: #07535c;
+}
+#user_name
+{
+    margin-left:-100px;
+}
+#user_email
+{
+    margin-left:-80px; 
+    margin-top: -50px;
+}
+
+
+
+
+
+
+
+#user_gf
+{
+    width: 30px;
+    height: 30px;   
+}
+#show_password
+{
+    margin-top:-45px;
+    margin-left: 83%;
+    height: auto;
+    width: 20px;
+   
+
+}
+#pass_show_btn
+{
+    font-family: Arial Black;
+    cursor: pointer;
+    color: rgb(5, 99, 102);
+}
+#user_connfm_pass
+{
+    margin-left:20px; 
+}
+#userpasswordtext
+{
+    margin-top: -60px;
+    margin-left: 500px;
+    color:red;
+ 
+    width:200px;
+    height: 10px;
+   
+}
+#name_sec
+{
+    margin-left:65px;
+    margin-top:-23px
+}
+#user_name_input,#user_Lastname_input,#user_email_input,#user_phone_no_input,#user_password_input,#user_confirm_password_input
+{
+   
+    height: 35px;
+    color:#0b3438;
+    font-size: x-large;
+    border-width: 0 0 2px;
+    border-color: #07535c;
+    outline: none;
+    transition-duration: .2s;
+}
+#user_name_input:focus,#user_Lastname_input:focus,#user_email_input:focus,#user_phone_no_input:focus,#user_password_input:focus,#user_confirm_password_input:focus {
+    border-width: 0 0 2px;
+    border-color: rgb(5, 231, 175);
+   
+  }
+
+#user_name_input
+{
+    width:35%;
+}
+
+#lastName
+{
+margin-top: -40.5px;
+margin-left: 60%;
+}
+#user_Lastname_input
+{
+width:44%;
+}
+
+#user_email_input
+{
+    margin-left: 200px;
+}
+#user_email
+{
+    margin-top:0px;
+}
+#email_sec
+{
+    margin-top: -25px;
+}
+#user_email_input
+{
+    width:50%
+}
+#user_phone_no
+{
+    margin-top: -1.8px;
+    margin-left:35px;
+}
+#phone_no_sec
+{
+    margin-left: 200px;
+    margin-top:-20px;
+}
+#user_phone_no_input
+{
+    width:69%;
+}
+#user_password
+{
+    margin-top:-3px;
+    margin-left: 12px;
+}
+#password_sec
+{
+    margin-left: 200px;
+    margin-top:-22px;
+}
+#user_password_input
+{
+    width:69%;
+}
+#user_connfm_pass
+{
+    margin-top: -3px;
+    margin-left:25px;
+}
+#confirm_password_sec
+{
+    margin-left: 200px;
+    margin-top: -22px;
+}
+#user_confirm_password_input
+{
+    width:69%; 
+}
+#password_strength
+{
+    margin-top: -25px;
+    margin-left:70%;
+     
+    width:fit-content;
+    text-align: right;
+}
+#passShow
+{
+    height: 25px;
+}
+#message
+{
+    font-size: larger;
+}
+#submit_sign_up
+{
+    width:80px;
+    height: 40px;
+    margin-left:180px;
+   
+    color:white;
+    background-color: teal;
+    border:none;
+    font-size: 15px;
+    font-family: Arial Black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#submit_sign_up:hover
+{
+background-color: rgb(4, 160, 134);
+}
+#privacy_policy
+{
+    color:rgb(253, 5, 129);
+    font-size: large;
+    margin-left: 180px;
+    margin-top: 50px;
+
+}
+#user_massage_sign_up
+{
+    margin-top:20px;
+    margin-left: 30%;
+}
+
+#footerSignUp
+{
+
+    width:75%;
+    margin-left: 12.5%;
+    height: auto;
+    font-family: Arial black;
+    text-align: center;
+    margin-top: 48px;
+   
+  
+}
+#footerSignUp a
+{
+    padding: 11px 20px;
+    color:#6e7f81 ;
+}
+#footerSignUp a:hover
+{
+    color:#035964 ;
+}
+#copy,#demo,#web
+{
+    color:#6e7f81;
+}
+
+
+
+
+
+
+
+
+   

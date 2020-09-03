@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>edit-profile-<%= records.name %></title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../stylesheets/editProfile.css"
+    />
+  
+    <script type="text/javascript" src="../javascripts/edit_profile.js"></script>
+   
+  </head>
+
+  <body>
+    <div id="photik">
+      <div id="logo_div">
+        <a href="/">
+          <h1 id="logo">Pothik</h1>
+        </a>
+      </div>
+      <div id="search">
+        <form id="dearch_f" action="#">
+          <input
+            id="search_bar"
+            type="text"
+            placeholder="Search.."
+            name="search"
+            required
+          />
+          <div id="search_b">
+            <button id="search_button" type="submit">
+              <img id="search_icon" src="images/search icon.png" />
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!--For Loged In User-->
+
+      <div id="homeSection">
+        <span> <a id="home" href="/">Home</a> </span>
+      </div>
+
+      <div id="user">
+        <div id="myaccount">
+          <nav role="navigation">
+            <ul>
+              <li>
+                
+                <img id="profileImageIndex"src="./profileCoverImage/<%= records.profileImage %>" /> 
+                <ul class="dropdown">
+                  <li><a href="/my-profile"> My Profile</a></li>
+                  <li><a href="#">Settings</a></li>
+                  <li><a href="#">Propertyed</a></li>
+                  <li><a href="/logout">Logout</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!--non Logeni-->
+    </div>
+
+    <!-- update Form-->
+
+    <form action="/profileUpdate" method="POST"  enctype="multipart/form-data">
+      <input
+        type="hidden"
+        id="UserId"
+        name="UserId"
+        value="<%= records._id %>"
+      />
+
+      <div id="edit_profile">
+     
+
+        <div id="media_display">
+          
+          <img id="profile_img"src="./profileCoverImage/<%= records.coverImaage %>" />
+            <div id="showImagCover">  <img id="outputImage"   /></div> 
+          <input type="file" id="UserCoverPhoto" name="UserCoverPhoto" accept="image/*" onchange="loadFile(event)" style="display: none;">
+           <label for="UserCoverPhoto" id="editdskjhk"> <h4 id="EditSection">Edit Cover </h4></label>
+
+        </div>
+
+
+
+
+
+       
+          <div id="media_display2">
+         
+            <img id="profile_img2"  src="./profileCoverImage/<%= records.profileImage %>""/>
+
+
+            <div id="showImagProfile">  <img id="outputImagePrfile"   /></div> 
+            <input type="file" id="UserProfilePhoto" name="UserProfilePhoto" accept="image/*" onchange="loadFileProfile(event)" style="display: none;">
+             <label for="UserProfilePhoto" > <h4 id="EditSectionPrfile">Edit Profile </h4></label>
+          </div>
+
+      <div id="updaterror">
+
+          <% if(massege.User_fast_name){ %>
+            <p id="errorMsg"><%= massege.User_fast_name.msg  %></p> 
+            <% } %>
+
+            <% if(massege.User_lsat_name){ %>
+              <p id="errorMsg"><%= massege.User_lsat_name.msg  %></p> 
+              <% } %>
+
+              <% if(massege.User_email_id){ %>
+                <p id="errorMsg"><%= massege.User_email_id.msg  %></p> 
+                <% } %>
+
+                <% if(massege.userbio){ %>
+                  <p id="errorMsg"><%= massege.userbio.msg  %></p> 
+                  <% } %>
+
+                  
+          </div>
+    
+
+      <div id="user_data">
+        <span id="edit_user_text"> Fast Name :</span>
+        <input
+          id="edit_name"
+          type="text"
+          name="User_fast_name"
+          value="<%= records.name %>"
+          pattern="[A-Za-z]+{1,25}"
+          title="Please Fill by Only 'Latters'  "
+          required
+        /><br /><br />
+        <span id="edit_user_text"> Last Name :</span>
+        <input
+          id="edit_name"
+          type="text"
+          name="User_lsat_name"
+          value="<%= records.lastName %>"
+          pattern="[A-Za-z]+{1,25}"
+          title="Please Fill by Only 'Latters'  "
+          required
+        /><br /><br />
+
+        <span id="edit_user_text2">Eamil Id :</span>
+        <input
+          id="edit_email"
+          type="email"
+          name="User_email_id"
+          value="<%= records.email %>"
+        /><br /><br />
+
+        <span id="edit_short_bio">Add / edit short Bio :</span><br />
+        <textarea id="in4" name="userbio"placeholder="This is your bio..."  ><%= records.userBio %></textarea
+        ><br/>
+        <span id="edit_Password_sec"> Change Password : </span> <a id="changePasswordbutton" href="/Change_Password">Change Password</a>   <br />  
+        </div>
+        <div id="submit_update">
+          <button id="update_user_data" type="submit">Update</button>
+        </div><br>
+      </div>
+     
+
+<br>
+    </div>
+    </form>
+
+  
+
+
+    <div id='footer'>
+
+      <a href="/aboutUs">about us</a>
+      <a href="/privacy">privacy and policy</a>
+      <a href="/contact">contact</a>
+      <a href="/about cookie">about cookie</a>
+      <a href="/feedback">feedback</a>
+      <span id="copy">&copy;</span> <span id="demo" ></span><span id="web">-pothik</span>
+      </div>
+
+      <script>
+        var d = new Date();
+        document.getElementById("demo").innerHTML = d.getFullYear();
+        
+        </script>
+  </body>
+</html>

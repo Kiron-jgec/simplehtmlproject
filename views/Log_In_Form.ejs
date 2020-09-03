@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Log In</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/Log_in_Sign_Up_upload.css ">
+</head>
+<body>
+<h1 id="Logo">Photik</h1>
+<div id="Log_In_Form">
+    <div id="log_in_text">
+        <div id="LogIndev">
+        <h1 id="login_text">Log In</h1>
+      </div>
+      <div id="errorMsG"><br>
+         <% if(massege !=''){ %>
+          <h3 id="errorM"> <%= massege %> </h3> 
+             <% } %></div>
+
+
+        <div id="log_form">
+            <form action="/login" method="post">
+                <p id="id_text">User Id : </p>
+                <div id="log_in_sec"> <input id="user_id" type="text" name="email"placeholder=" email id..." required>
+                </div><br>
+                <p id="id_pass">Password : </p>
+                    <div id="pass_sec">
+                <input id="user_pass" type="password" name="password"placeholder="password..." required>
+            </div>
+            <div id="forget_pass"><h3 id="forget_pass_text">Forget Password? <a href="#">Click</a>     </h3></div>
+           <button id="log_sub" type="submit">Log In</button>
+
+
+
+
+
+            </form>
+            <div id="user_massage">
+
+           <h2 id="u_msg"> Dont have Log In id ? <a href="/signup">Sign Up here.</a> </h2>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+<div id='footerlogin'>
+
+    <a href="/aboutUs">about us</a>
+    <a href="/privacy">privacy and policy</a>
+    <a href="/contact">contact</a>
+    <a href="/about cookie">about cookie</a>
+    <a href="/feedback">feedback</a>
+    <span id="copy">&copy;</span> <span id="demo" ></span><span id="web">-pothik</span>
+    
+    
+    
+    
+    </div>
+    <script>
+        var d = new Date();
+        document.getElementById("demo").innerHTML = d.getFullYear();
+        
+        </script>
+</body>
+</html>

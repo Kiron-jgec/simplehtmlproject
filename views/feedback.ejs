@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>feedback</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/contact.css">
+   
+   
+</head>
+
+<body>
+    <div id="hedertitle">
+
+        <h1 id="headtext">Your Feedback</h1>
+     </div>
+     
+<div id="logo">
+
+   <a  id="logotext" href="/" ><h1>Pothik</h1></a>
+</div>
+
+<div id="mainContent">
+
+<div id="errorMsg">
+
+    <% if(succMsg !=''){ %>
+        <h3 id="successMsg"> <%= succMsg %> </h3>
+        <% } %>
+            
+
+    <% if(error.name){ %>
+        <span id="error"><%= error.name.msg  %> </span>
+        <% } %> 
+        <% if(error.email){ %>
+            <span id="error"><%= error.email.msg  %> </span>
+            <% } %> 
+            <% if(error.massege){ %>
+                <span id="error"><%= error.massege.msg  %> </span>
+                <% } %> 
+
+
+
+</div>
+
+
+<form action="/feedback" method="POST">
+    
+        <p id="id_text">Name: </p>
+        <div id="log_in_sec"> <input id="user_id" type="text" name="name" required>
+        </div><br>
+        <p id="id_pass">Email: </p>
+            <div id="pass_sec">
+        <input id="user_pass" type="email" name="email" required>
+    </div>
+    <p id="msg_text">Feedback: </p>
+    <textarea name="massege" id="textareaMsg" required ></textarea>
+
+   <div id="sendbtn"> <button id="log_sub" type="submit">Send</button></div><br>
+
+
+</form>
+
+
+
+
+</div>
+
+
+
+<div id='footerfeedback'>
+
+    <a href="/aboutUs">about us</a>
+    <a href="/privacy">privacy and policy</a>
+    <a href="/contact">contact</a>
+    <a href="/about cookie">about cookie</a>
+    <a href="/feedback">feedback</a>
+    <span id="copy">&copy;</span> <span id="demo" ></span><span id="web">-pothik</span>
+    </div>
+    
+    <script>
+        var d = new Date();
+        document.getElementById("demo").innerHTML = d.getFullYear();
+        
+        </script>
+
+
+</body>
+</html>

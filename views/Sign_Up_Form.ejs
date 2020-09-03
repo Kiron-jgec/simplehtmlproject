@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/Log_in_Sign_Up_upload.css">
+
+    <script type="text/javascript" src="../javascripts/signUp.js"></script>
+
+</head>
+
+<body>
+    <div id="signUp_form">
+        <h1 id="Logo">Photik</h1>
+
+        <div id="sign_up">
+              <div id="signUpdev">
+            <h1 id="Sign_Up_text">Sign Up</h1>
+            </div>
+
+            <div id="sign_up_form">
+
+                <div id="errors">
+                
+                    <!-- Success Massege-->
+               <% if(smsg !=''){ %>
+                <h3 id="successMsg"> <%= smsg %> </h3>
+                <% } %>
+                    
+                
+  <!-- Fast name error Massege-->
+                <% if(errorMsg.name){ %>
+                    <p id="errorMsg"><%= errorMsg.name.msg  %></p> 
+                    <% } %> 
+
+
+  <!-- last name error Massege-->
+                     <% if(errorMsg.lastName){ %>
+                        <p id="errorMsg"><%= errorMsg.lastName.msg  %></p>
+                        <% } %> 
+  <!-- Email error Massege-->
+                        <% if(errorMsg.email){ %>
+                            <p id="errorMsg"><%= errorMsg.email.msg  %></p>
+                            <% } %> 
+
+  <!-- Password error Massege-->
+                        <% if(errorMsg.password){ %>
+                            <p id="errorMsg"><%= errorMsg.password.msg  %></p>
+                            <% } %> 
+
+                        
+
+
+
+             
+
+
+
+               
+
+
+       
+
+                <form id="sign_up_form_inputs" action="/SignUp" method="post" onsubmit="return pass_match()">
+
+                    <h3 id="user_name">Name :</h3>
+
+                    <div id="name_sec">
+                        <input id="user_name_input" type="text" name="name" pattern="[A-Za-z]+{1,20}"
+                            title="Please Fill by Only 'Latters'  " placeholder="Fast name..." required>
+
+                           
+                           
+                            <div class="tooltip"><span id="rulesText">&#63;</span>
+                                <span class="tooltiptext">Name must be atleast 3 charecter and only charecter </span>
+                              </div>
+
+                              
+                          
+                    </div>
+                    <div id="lastName">
+
+                        <input id="user_Lastname_input" type="text" name="lastName" pattern="[A-Za-z]+{1,25}"
+                        title="Please Fill by Only 'Latters'  " placeholder="Last name..." required>
+                      
+                    </div>
+
+                    <h3 id="user_email">Email Id :</h3>
+                    <div id="email_sec">
+                        <input id="user_email_input" type="email" name="email" required>
+                        <div class="tooltip"><span id="rulesText">&#63;</span>
+                            <span class="tooltiptext">Email must be valid  </span>
+                          </div>
+                       
+                    </div> 
+
+                    <h3 id="user_password"> Create Password :</h3>
+                    <div id="password_sec">
+                        <input id="user_password_input" type="password" name="password"
+                            v-model="UserCreate_password" onkeyup="Password_Strength(this.value)" required>
+                            <div class="tooltip"><span id="rulesText">&#63;</span>
+                                <span class="tooltiptext">Password must be atleast 8 charecter and use 
+                                   upper case[A-Z],lower case[a-z] special charecter[ @,!,$,%,&,#,/ ] and numbers[0-9] </span>
+                              </div>
+                    </div>
+                    <div id="password_strength"><span id="password_strengthT"></span></div>
+                    <div id="show_password">
+                        <p id="pass_show_btn" onclick="myFunction()"><img id="passShow" src="../images/passshow.png"  ></p>
+                    </div>
+                    <h3 id="user_connfm_pass">Confirm Password :</h3>
+                    <div id="confirm_password_sec">
+                        <input id="user_confirm_password_input" type="password" name="confirmPassword"
+                            v-model="UserConfirm_password" onkeyup='check();' required>
+
+                    </div>
+                    <div id="userpasswordtext">
+                        <p id='message'> </p>
+                    </div>
+                    <p id="privacy_policy">
+                        <input type="checkbox" name="agree" value="yes" @focus="password_match_cheak()" required> I read
+                        all the <a href="/privacyPolicy" target="_blank">privacy and policy</a> of the website
+                    </p>
+
+                    <button id="submit_sign_up" type="submit">Sign Up</button>
+
+                </form>
+
+
+                
+
+            </div>
+            <div id="user_massage_sign_up">
+
+                <h3 id="u_msg"> Already Sign Up ? <a href="/login">Log In here.</a> </h3><br>
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+    <div id='footerSignUp'>
+
+        <a href="/aboutUs">about us</a>
+        <a href="/privacy">privacy and policy</a>
+        <a href="/contact">contact</a>
+        <a href="/about cookie">about cookie</a>
+        <a href="/feedback">feedback</a>
+        <span id="copy">&copy;</span> <span id="demo" ></span><span id="web">-pothik</span>
+        </div>
+
+        
+          
+          
+           
+          
+          <script>
+          var d = new Date();
+          document.getElementById("demo").innerHTML = d.getFullYear();
+          
+          </script>
+
+  
+</body>
+
+</html>
